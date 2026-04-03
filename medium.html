@@ -21,11 +21,11 @@
           <img src="./assets/imgs/svg/logo.svg" alt="" />
         </div>
         <div class="nav-links">
-          <a href="#">Our story</a>
-          <a href="#">Membership</a>
-          <a href="#">Write</a>
-          <a href="#">Sign In</a>
-          <a href="#" class="link-btn">Get started</a>
+          <a href="#" class="fuori-hero">Our story</a>
+          <a href="#" class="fuori-hero">Membership</a>
+          <a href="#" class="fuori-hero">Write</a>
+          <a href="#" class="fuori-hero">Sign In</a>
+          <a href="#" class="fuori-hero" class="link-btn">Get started</a>
         </div>
       </nav>
       <section class="hero-container">
@@ -333,5 +333,23 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script>
+      const navbar = document.getElementsByTagName("nav")[0];
+      const herobar = document.querySelector(".hero-container");
+      document.addEventListener("scroll", function () {
+        //OFFSETTOP -> DISTANZA TRA IL BORDO SUPERIORE DI HERO E IL TOP DI BODY
+        //OFFSETHEIGHT -> ALTEZZA TOTALE DI HERO
+        //LA SOMMA DELLE 2 -> DISTANZA DOPO IL QUALE DEVE INIZIARE L'ANIMAZIONE
+        const heroFine = herobar.offsetTop + herobar.offsetHeight;
+        //ALTEZZA DELLA NAVBAR
+        const navAltezza = navbar.offsetHeight;
+        //QUANDO SI SCROLLA PER L'ALTEZZA TOTALE MENO L'ALTEZZA DELLA STESSA NAVBAR
+        if (window.scrollY >= heroFine - navAltezza) {
+          navbar.classList.add("scroll");
+        } else {
+          navbar.classList.remove("scroll");
+        }
+      });
+    </script>
   </body>
 </html>
