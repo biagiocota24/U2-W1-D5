@@ -207,11 +207,13 @@ article a:hover {
 #other-news article {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   height: fit-content;
 }
 #other-news article > img {
   width: 40%;
   max-width: 250px;
+  max-height: auto;
 }
 article .text {
   color: gray;
