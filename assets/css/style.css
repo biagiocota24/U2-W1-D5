@@ -57,6 +57,16 @@ nav a:last-of-type:hover {
   background-color: white;
 }
 /* HERO SECTION */
+.hero-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  overflow: hidden;
+  border-bottom: 1.5px solid black;
+}
+.hero-container svg {
+  display: none;
+}
 .hero {
   padding: 4em 1em;
   display: flex;
@@ -64,8 +74,9 @@ nav a:last-of-type:hover {
   align-items: flex-start;
   justify-content: space-between;
   height: 300px;
-  border-bottom: 1.5px solid black;
   margin-top: 95px;
+  z-index: 10;
+  flex-shrink: 1;
 }
 .hero h1 {
   font-size: 3em;
@@ -246,24 +257,21 @@ article .text .info .data {
 }
 
 @media screen and (min-width: 768px) {
+  .hero-container {
+    object-fit: contain;
+  }
+  .hero-container svg {
+    display: block;
+    position: relative;
+    right: -30%;
+  }
+
   .hero {
-    background-image: url(../../sfondo.svg);
+    /* background-image: url(../../sfondo.svg);
     background-repeat: no-repeat;
-    background-position: 150% 50%;
+    background-position: 150% 50%; */
     height: 400px;
     padding: 4em 2.5em;
-  }
-  .hero h1 {
-    font-size: 5em;
-  }
-  .hero p {
-    font-size: 2em;
-    max-width: 50%;
-  }
-  .hero a {
-    /* padding: 1em 2em; */
-    border-radius: 50px;
-    font-size: 1.6em;
   }
   nav {
     padding: 1.6em 2em;
@@ -317,12 +325,22 @@ article .text .info .data {
   }
 }
 @media screen and (min-width: 1100px) {
+  .hero-container svg {
+    display: block;
+    max-width: 600px;
+    min-width: 600px;
+    right: 0;
+  }
   nav {
     padding: 2em 8em;
   }
   .hero {
     background-position: right;
     padding-left: 6em;
+    font-size: 1.4em;
+  }
+  .hero a {
+    border-radius: 50px;
   }
   main {
     display: flex;
